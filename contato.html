@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Meu Sonho de Infância - Contato</title>
+		<link rel="icon" type="image/jpg" href="img/dream.jpg">
+		<link rel="stylesheet" type="text/css" href="estilo.css">
+	</head>
+	<body>
+		<header>
+			<h1>Meu Sonho de Infância</h1>
+			<nav>
+				<ul>
+					<li><a href="index.html">SONHO</a></li>
+					<li><a href="hoje.html">HOJE</a></li>
+					<li><a href="futuro.html">FUTURO</a></li>
+					<li><a href="contato.html" class="active">CONTATO</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section class="form-container">
+				<h2>Contato & Avaliação</h2>				
+				<form id="formContato" onsubmit="return validarFormulario(event)">
+					<div class="form-group">
+						<label for="nome">Nome:</label>
+						<input type="text" id="nome" name="nome">
+					</div>
+
+					<div class="form-group">
+						<label for="nota">Nota do Site (0 a 5):</label>
+						<select id="nota" name="nota">
+							<option value="">Selecione uma nota...</option>
+							<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select>
+					</div>
+					<div class="container-fixo">
+						<div class="form-group">
+							<label for="sugestoes">DEIXE AQUI O QUE ACHOU DO SITE/SUGESTÕES:</label>
+							<textarea id="sugestoes" name="sugestoes" rows="5" placeholder="Digite suas sugestões aqui..."></textarea>
+						</div>
+						<button type="submit">Enviar Dados</button>
+					</div>
+
+				</form>
+			</section>
+		</main>
+		<script>
+			function validarFormulario(event) {
+				var nome = document.getElementById("nome").value.trim();
+				var nota = document.getElementById("nota").value;
+
+				if (nome === "") {
+					alert("Por favor, preencha o campo NOME.");
+					event.preventDefault(); 
+					return false;
+				}
+
+				if (nota === "") {
+					alert("Por favor, selecione uma NOTA de 0 a 5.");
+					event.preventDefault(); 
+					return false;
+				}
+
+				alert("Formulário validado com sucesso!");
+				return true;
+			}
+		</script>
+
+		<footer>
+			<p>Denner Gabriel Monção de Lima 2026 &copy Todos direitos reservados</p>
+			<p class="academico">Trabalho acadêmico sem fins lucrativos</p>
+		</footer>
+	</body>
+</html>
